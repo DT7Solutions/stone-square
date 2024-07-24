@@ -1,3 +1,14 @@
 /*===================================== 
 YOU CAN WRIGHT CUSTOME CSS 
 ======================================*/
+
+.wt-post-text p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.company-name{
+    font-size: 20px;
+    font-weight: 600 !important;
+}
