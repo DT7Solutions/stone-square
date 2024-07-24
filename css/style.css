@@ -697,14 +697,14 @@ h6 a:hover {
   color:#50aab2;
 }
 
+/* Martel */
+h1 {font-size: 56px;  line-height:46px;  color:#203334;font-family: 'Roboto', serif;}
 
-h1 {font-size: 56px;  line-height:46px;  color:#203334;font-family: 'Martel', serif;}
+h2 {font-size: 48px;  line-height:58px;  color:#203334; font-family: 'Roboto', serif; font-weight:700;}
 
-h2 {font-size: 48px;  line-height:58px;  color:#203334; font-family: 'Martel', serif; font-weight:700;}
+h3 {font-size: 36px;  line-height:42px;font-family: 'Roboto', serif;  font-weight:700;}
 
-h3 {font-size: 36px;  line-height:42px;font-family: 'Martel', serif;  font-weight:700;}
-
-h4 {font-size: 18px;  line-height:24px;  color:#203334;  margin-bottom:15px;font-family: 'Martel', serif;  font-weight:700;}
+h4 {font-size: 18px;  line-height:24px;  color:#203334;  margin-bottom:15px;font-family: 'Roboto', serif;  font-weight:700;}
 
 h5 {font-weight:normal;  font-size: 16px;  line-height:22px;  color:#203334; }
 
@@ -7695,7 +7695,7 @@ bottom: -25px;}
 	text-transform:uppercase;
 	letter-spacing:5px;
 	font-weight:600;
-	font-family: 'Martel', serif;
+	font-family: 'Roboto', serif;
 	-webkit-transform: rotate(-90deg);
 	-moz-transform: rotate(-90deg);
 	-o-transform: rotate(-90deg);
