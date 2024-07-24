@@ -698,13 +698,13 @@ h6 a:hover {
 }
 
 /* Martel */
-h1 {font-size: 56px;  line-height:46px;  color:#203334;font-family: 'Roboto', serif;}
+h1 {font-size: 56px;  line-height:46px;  color:#203334;font-family: 'poppins', serif;}
 
-h2 {font-size: 48px;  line-height:58px;  color:#203334; font-family: 'Roboto', serif; font-weight:700;}
+h2 {font-size: 48px;  line-height:58px;  color:#203334; font-family: 'poppins', serif !important; font-weight:700;}
 
-h3 {font-size: 36px;  line-height:42px;font-family: 'Roboto', serif;  font-weight:700;}
+h3 {font-size: 36px;  line-height:42px;font-family: 'poppins', serif;  font-weight:700;}
 
-h4 {font-size: 18px;  line-height:24px;  color:#203334;  margin-bottom:15px;font-family: 'Roboto', serif;  font-weight:700;}
+h4 {font-size: 18px;  line-height:24px;  color:#203334;  margin-bottom:15px;font-family: 'poppins', serif;  font-weight:700;}
 
 h5 {font-weight:normal;  font-size: 16px;  line-height:22px;  color:#203334; }
 
@@ -9361,7 +9361,7 @@ STEP NUMBER
 
 /*====COunter Section====*/
 .counter-section-one{
-	background-image:url(../images/counter-bg.jpg);
+	background-image:url(../images/background/414x414.png);
 	height:460px;
 	position:relative;
 	background-size:cover;
