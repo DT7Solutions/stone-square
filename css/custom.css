@@ -20,3 +20,8 @@ YOU CAN WRIGHT CUSTOME CSS
 .hover-box-effect:hover{
     box-shadow: var(--bs-box-shadow) 
 }
+
+.what-we-do-sec{
+    background-attachment: fixed;
+    background-image: url(../images/background/about-parlex.png); 
+}
