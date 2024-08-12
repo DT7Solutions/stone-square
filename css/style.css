@@ -9361,7 +9361,7 @@ STEP NUMBER
 
 /*====COunter Section====*/
 .counter-section-one{
-	background-image:url(../images/background/414x414.png);
+	background-image:url(../images/about/stroke.png);
 	height:460px;
 	position:relative;
 	background-size:cover;
@@ -10060,7 +10060,7 @@ STEP NUMBER
 .stats .counter{
 	padding-top: 15px;
 	padding-bottom: 15px;
-	color: red;
+	/* color: ;  */
 	font-size:45px;
 	font-weight: 600;
 	
@@ -10075,4 +10075,8 @@ STEP NUMBER
 	font-size: 45px;
 	padding-top: 20px;
 	padding-bottom: 10px;
+}
+
+.v-icon-effect{
+	box-shadow: var(--bs-box-shadow);
 }
