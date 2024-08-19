@@ -749,4 +749,21 @@ function mobile_side_drawer(){
 ===========================*/	
 
 
+
 })(window.jQuery);
+
+/*===========================
+Get A Quotation
+===========================*/	
+
+
+function get_quot(){
+	const name = $('#name').val();
+	const email = $('#email').val();
+	const phone = $('#phone').val();
+	const space = $('#space').val();
+
+	let formData = new FormData();
+	formData.append('name', name);
+}
+

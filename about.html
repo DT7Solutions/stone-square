@@ -122,13 +122,22 @@
                                                 <input type="email" name="email"   id="email" required>
                                                 <span class="spin"></span>
                                             </div>                                            
-                                            <div class="input input-animate">
-                                                <label for="message">Textarea</label>
-                                                <textarea name="message"  id="message" required></textarea>
+                                            <div class="input mb-5">
+                                                <!-- <label for="phone">Select your space</label> -->
+                                                <select class="form-select form-select-sm mt-3" name="space" id="space"  aria-label=".form-select-sm example" style="border: none; border-bottom: 2px solid #d8dada; line-height: 60px; font-size: 14px; font-weight: 600; top: 10px;">
+                                                    <option selected>Select your space</option>
+                                                    <option value="independent_house">independent <header></header>ouse </option>
+                                                    <option value="villas">villas</option>
+                                                    <option value="2BHK">2BHK</option>
+                                                    <option value="3BHK">3BHK</option>
+                                                    <option value="shops">shops</option>
+                                                    <option value="Office">Office</option>
+                                                  </select>
                                                 <span class="spin"></span>
-                                            </div>
+                                            </div> 
+                                                                                           
                                             <div class="text-right">
-                                                <button name="submit" type="submit" value="Submit" class="btn-half site-button m-b15">
+                                                <button name="submit" type="button" onclick="get_quot()" value="Submit" class="btn-half site-button m-b15">
                                                       <span>Submit</span>
                                                 </button>
                                             </div>

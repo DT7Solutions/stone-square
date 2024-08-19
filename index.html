@@ -114,7 +114,7 @@
                                             <!-- TITLE END --> 
                                             <div class="input input-animate">
                                                 <label for="name">Name</label>
-                                                <input type="text" name="username"  id="name" required>
+                                                <input type="text" name="name"  id="name" required>
                                                 <span class="spin"></span>
                                             </div>
                                             <div class="input input-animate">
@@ -122,14 +122,27 @@
                                                 <input type="email" name="email"   id="email" required>
                                                 <span class="spin"></span>
                                             </div> 
-                                            <div class="input input-animate">
+                                            <div class="input input-animate input-animate">
                                                 <label for="phone">Phone Number</label>
                                                 <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required>
                                                 <span class="spin"></span>
-                                            </div>                                             
-                                           
+                                            </div> 
+                                            <div class="input mb-5">
+                                                <!-- <label for="phone">Select your space</label> -->
+                                                <select class="form-select form-select-sm mt-3" name="space" id="space"  aria-label=".form-select-sm example" style="border: none; border-bottom: 2px solid #d8dada; line-height: 60px; font-size: 14px; font-weight: 600; top: 10px;">
+                                                    <option selected>Select your space</option>
+                                                    <option value="independent_house">independent <header></header>ouse </option>
+                                                    <option value="villas">villas</option>
+                                                    <option value="2BHK">2BHK</option>
+                                                    <option value="3BHK">3BHK</option>
+                                                    <option value="shops">shops</option>
+                                                    <option value="Office">Office</option>
+                                                  </select>
+                                                <span class="spin"></span>
+                                            </div> 
+                                                                                           
                                             <div class="text-right">
-                                                <button name="submit" type="submit" value="Submit" class="btn-half site-button m-b15">
+                                                <button name="submit" type="button" onclick="get_quot()" value="Submit" class="btn-half site-button m-b15">
                                                       <span>Submit</span>
                                                 </button>
                                             </div>
