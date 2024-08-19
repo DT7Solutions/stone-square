@@ -9902,6 +9902,10 @@ STEP NUMBER
 		float: none;
 		margin: 10px 0px 0px 0px;
 	}
+	.wt-icon-box-wraper.center {
+		text-align: center;
+		margin-bottom: 10px;
+	}
 }
 .header-style-1  .social-bx li {
 	padding-left: 2px;
