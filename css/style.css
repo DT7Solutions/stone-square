@@ -8732,13 +8732,35 @@ bottom: -25px;}
   right: 10px;
   top: 100%;
   content: '';
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   -webkit-transition-delay: 0.25s;
   transition-delay: 0.25s;
 }
-
+.work-hover-grid:after {
+  content: '\f06e';
+  font-family: 'FontAwesome';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 24px;
+  width: 40px;
+  height: 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.work-hover-grid:hover:after {
+  opacity: 1; 
+}
 .work-hover-grid img {
   vertical-align: top;
   max-width: 100%;
