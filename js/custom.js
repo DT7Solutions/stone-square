@@ -765,5 +765,8 @@ function get_quot(){
 
 	let formData = new FormData();
 	formData.append('name', name);
+	formData.append('email', email);
+	formData.append('phone', phone);
+	formData.append('space', space);
 }
 
