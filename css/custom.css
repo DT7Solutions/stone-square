@@ -25,3 +25,10 @@ YOU CAN WRIGHT CUSTOME CSS
     background-attachment: fixed;
     background-image: url(../images/background/about-parlex.png); 
 }
+.team-img h4 span{
+    font-size: 12px;
+}
+
+.list-unstyled li{
+ cursor: pointer !important;
+}
