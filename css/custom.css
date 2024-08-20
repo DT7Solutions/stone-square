@@ -2,11 +2,16 @@
 YOU CAN WRIGHT CUSTOME CSS 
 ======================================*/
 
+.wt-mid-page {
+    position: relative;
+    max-width: 945px;
+    margin: 0px auto;
+}
 .wt-post-text p{
-    overflow: hidden;
-    display: -webkit-box;
+    text-align: justify;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    margin-bottom: 2.5%;
 }
 .company-name{
     font-size: 20px;
