@@ -3,37 +3,91 @@ YOU CAN WRIGHT CUSTOME CSS
 ======================================*/
 
 .wt-mid-page {
-    position: relative;
-    max-width: 945px;
-    margin: 0px auto;
+  position: relative;
+  max-width: 945px;
+  margin: 0px auto;
 }
-.wt-post-text p{
-    text-align: justify;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+.wt-post-text p {
+  text-align: justify;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 2.5%;
+}
+.company-name {
+  font-size: 20px;
+  font-weight: 600 !important;
+}
+
+.parlex-section {
+  background-attachment: fixed;
+}
+
+.hover-box-effect:hover {
+  box-shadow: var(--bs-box-shadow);
+}
+
+.what-we-do-sec {
+  background-attachment: fixed;
+  background-image: url(../images/background/about-parlex.png);
+}
+.team-img h4 span {
+  font-size: 12px;
+}
+
+.list-unstyled li {
+  cursor: pointer !important;
+}
+
+.header-nav .nav > li > a ,
+.footer-link ul li a {
+  font-size: 16px;
+}
+
+.header-center .wt-header-left-child{
+	float: left;
+	padding-left: 15px;
+}
+.header-center .wt-header-right {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    width: 100%;
+    max-width: 275px;
+}
+.sticky-wrapper {
+    max-height: 82px;
+}
+.contact-nav .contact_close{
+	position: sticky;
+	left: 20px;
+	top: 10px;
+	width: auto;
+	border: none;
+	text-align: left;
+	font-size: 36px;
+	right: 0px;
+}
+.input-animate.input {
     margin-bottom: 2.5%;
 }
-.company-name{
-    font-size: 20px;
-    font-weight: 600 !important;
+.input-animate.input input { 
+    height: 50px; 
+    top: 20px; 
+    border: none; 
+    background: transparent; 
+}
+.form-select:focus {
+    box-shadow: none;
+}
+.icon-content h5{
+    margin-bottom: 2.5%;
 }
 
-.parlex-section{
-    background-attachment: fixed;
-}
 
-.hover-box-effect:hover{
-    box-shadow: var(--bs-box-shadow) 
-}
 
-.what-we-do-sec{
-    background-attachment: fixed;
-    background-image: url(../images/background/about-parlex.png); 
-}
-.team-img h4 span{
-    font-size: 12px;
-}
 
-.list-unstyled li{
- cursor: pointer !important;
+@media screen and (max-width: 920px) {
+  #download {
+    display: none;
+  }
 }

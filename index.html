@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="plugins/revolution/revolution/css/settings.css">
     <!-- REVOLUTION NAVIGATION STYLE -->
     <link rel="stylesheet" href="plugins/revolution/revolution/css/navigation.css">
+    <!-- AOS CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,800,800i,900" rel="stylesheet"> 
@@ -50,7 +51,7 @@
         <header class="site-header header-style-1  nav-wide  mobile-sider-drawer-menu">
             <div class="sticky-header main-bar-wraper">
                 <div class="main-bar bg-white">
-                    <div class="container header-center">
+                    <div class="container header-center align-items-center">
                         <div class="wt-header-left">
                             <div class="logo-header">
                                 <div class="logo-header-inner logo-header-one">
@@ -85,13 +86,20 @@
                                     </li>
                                     <li>
                                         <a href="./contact">Contact us</a>
-                                    </li>                                        
+                                    </li>                                  
                                 </ul>
                             </div>
                         </div>
                         <div class="wt-header-right ">
-                            <div class="site-bg-primary wt-header-right-child">
+                            <div class="wt-header-right-child">
+                                <!-- ETRA Nav -->
                                 <div class="extra-nav">
+                                    <div class="extra-cell" id="download">
+                                        <a href="/" class="site-search-btn text-uppercase" onclick="downloadPdfCatlog()">Download <i class="fa fa-download"></i></a>
+                                    </div>
+                                 </div>                                 
+                                <!-- ETRA Nav -->
+                                <div class="site-bg-primary  extra-nav">
                                     <div class="extra-cell">
                                         <div class="right-arrow-btn">
                                             <button type="button" class="btn-open contact-slide-show text-white notification-animate"><i class="fa fa-angle-left"></i></button>
@@ -99,69 +107,62 @@
                                     </div>
                                  </div>
                              </div>                                 
-                       </div>  
+                        </div>  
                         <!-- Contact Nav -->                            
                         <div class="contact-slide-hide"> 
                             <div class="contact-nav">
                                  <a href="javascript:void(0)" class="contact_close">&times;</a>
-                                 <div class="contact-nav-form p-a30">
-                                    <form class="cons-contact-form" method="post" action="form-handler.php">
+                                 <div class="contact-nav-form p-a20">
+                                    <form id="quotation-form" class="cons-contact-form">
                                         <div class="m-b30">
-                                            <!-- TITLE START -->
                                             <div class="section-head text-left">
-                                                <h4 class="m-b5">Get A Quotation</h4>
-                                            </div>
-                                            <!-- TITLE END --> 
-                                            <div class="input input-animate">
-                                                <label for="name">Name</label>
-                                                <input type="text" name="name"  id="name" required>
+                                                <h4 class="m-b3">Get A Quotation</h4>
+                                            </div> 
+                                            <div class="form-group">
+                                                <input name="name" type="text" class="form-control" placeholder="Name" id="name" required>
                                                 <span class="spin"></span>
                                             </div>
-                                            <div class="input input-animate">
-                                                <label for="email">Email</label>
-                                                <input type="email" name="email"   id="email" required>
+                                            <div class="form-group">
+                                                <input name="email" type="email" class="form-control" placeholder="Email Address" id="email" required>
                                                 <span class="spin"></span>
-                                            </div> 
-                                            <div class="input input-animate input-animate">
-                                                <label for="phone">Phone Number</label>
-                                                <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input name="phone" type="tel" class="form-control" placeholder="Phone Number" id="phone" pattern="[0-9]{10}" required>
                                                 <span class="spin"></span>
-                                            </div> 
-                                            <div class="input mb-5">
-                                                <!-- <label for="phone">Select your space</label> -->
-                                                <select class="form-select form-select-sm mt-3" name="space" id="space"  aria-label=".form-select-sm example" style="border: none; border-bottom: 2px solid #d8dada; line-height: 60px; font-size: 14px; font-weight: 600; top: 10px;">
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-select form-select-sm mt-3" name="space" id="space"  aria-label=".form-select-sm example">
                                                     <option selected>Select your space</option>
-                                                    <option value="independent_house">independent house </option>
-                                                    <option value="villas">villas</option>
+                                                    <option value="independent_house">Independent House</option>
+                                                    <option value="villas">Villas</option>
                                                     <option value="2BHK">2BHK</option>
                                                     <option value="3BHK">3BHK</option>
-                                                    <option value="shops">shops</option>
+                                                    <option value="shops">Shops</option>
                                                     <option value="Office">Office</option>
-                                                  </select>
+                                                </select>
                                                 <span class="spin"></span>
-                                            </div> 
-                                                                                           
+                                            </div>
                                             <div class="text-right">
-                                                <button name="submit" type="button" onclick="get_quot()" value="Submit" class="btn-half site-button m-b15">
-                                                      <span>Submit</span>
+                                                <button id="form-submit" name="submit" type="submit" value="Submit" class="site-button site-btn-effect">
+                                                    Submit
                                                 </button>
                                             </div>
                                         </div>
-                                    </form>
-                                    <div class="contact-info text-black m-b30">
+                                    </form>                                   
+                                    <div class="contact-info text-black m-b20">
                                         <!-- TITLE START -->
                                         <div class="section-head text-left">
                                             <h4 class="m-b5">Contact Info</h4>
                                         </div>
                                         <!-- TITLE END --> 
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
+                                        <div class="wt-icon-box-wraper left p-b20 icon-shake-outer">
                                             <div class="icon-xs"><i class="flaticon-smartphone  icon-shake"></i></div>
                                             <div class="icon-content">
                                                 <h5 class="m-t0 font-weight-500">Phone number</h5>
                                                 <p><a href="tel:+91 8499842999">+91 8499842999</a></p>
                                             </div>
                                         </div>
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
+                                        <div class="wt-icon-box-wraper left p-b20 icon-shake-outer">
                                             <div class="icon-xs"><i class="flaticon-email  icon-shake"></i></div>
                                             <div class="icon-content">
                                                 <h5 class="m-t0 font-weight-500">Email address</h5>
@@ -173,7 +174,9 @@
                                             <div class="icon-content">
                                                 <h5 class="m-t0 font-weight-500">Address info</h5>
                                                 <ul class="list-unstyled">
+                                                    <li class="my-2 font-weight-500">Guntur Branch :</li> 
                                                     <li class="my-2"><a href="https://maps.app.goo.gl/ZB1t9PKxnTLNHiFaA">SVN colony,Guntur, Andhra Pradesh, India</a></li>
+                                                    <li class="my-2 font-weight-500">Hyderabad Branch :</li> 
                                                     <li class="my-2"><a href="https://maps.app.goo.gl/G1QVnFgZQbac3A7Q6">Kukatpally, Hyderabad, Telangana, India</a></li>
                                                 </ul>
                                             </div>
@@ -181,7 +184,7 @@
                                     </div>                                        
                                  </div>
                             </div> 
-                        </div>       
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -813,7 +816,7 @@
                         </div>
                         <div class="row stats">
                             <div class="col-sm-12 col-md-3 col-lg-3">
-                                <div class="bg-light">
+                                <div class="bg-light" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000">
                                     <div class="p-a20 text-black wt-icon-box-wraper center">
                                         <div><img src="./images/icons/exp.png" alt="" width="60"></div>
                                         <div class="counter font-40 m-b5">10</div>
@@ -822,7 +825,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-3 col-lg-3">
-                                <div class="bg-light">
+                                <div class="bg-light" data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
                                     <div class="p-a20 text-black wt-icon-box-wraper center">
                                         <div><img src="./images/icons/projects.png" alt="" width="60"></div>
                                         <div class="counter font-40 m-b5">80</div>
@@ -831,7 +834,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-3 col-lg-3">
-                                <div class="bg-light">
+                                <div class="bg-light" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1000">
                                     <div class="p-a20 text-black wt-icon-box-wraper center">
                                         <div><img src="./images/icons/happy-face.png" alt="" width="60"></div>
                                         <div class="counter font-40 m-b5">250</div>
@@ -840,7 +843,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-3 col-lg-3">
-                                <div class="bg-light">
+                                <div class="bg-light" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000">
                                     <div class="p-a20 text-black wt-icon-box-wraper center">
                                         <div><img src="./images/icons/home.png" alt="" width="60"></div>
                                         <div class="counter font-40 m-b5">550</div>
@@ -874,7 +877,7 @@
 
                             <div class="col-md-4 col-sm-6 m-b50">
                                 <!-- COLUMNS 1 -->
-                                <div class="blog-grid-1 shadow mb-5 bg-body rounded" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1000">
+                                <div class="blog-grid-1 shadow mb-5 bg-body rounded" data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
                                     <div class="wt-img-effect">
                                         <img src="images/blog/interier.png" alt="Interior Design Tips">
                                     </div>
@@ -898,7 +901,7 @@
 
                             <div class="col-md-4 col-sm-12 m-b50">
                                 <!-- COLUMNS 2 -->
-                                <div class="blog-grid-1 shadow mb-5 bg-body rounded" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000">
+                                <div class="blog-grid-1 shadow mb-5 bg-body rounded" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1000">
                                     <div class="wt-img-effect">
                                         <img src="images/blog/exterier.png" alt="Exterior Design Innovations">
                                     </div>
@@ -922,7 +925,7 @@
 
                             <div class="col-md-4 col-sm-6 m-b50">
                                 <!-- COLUMNS 3 -->
-                                <div class="blog-grid-1 shadow mb-5 bg-body rounded" data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
+                                <div class="blog-grid-1 shadow mb-5 bg-body rounded" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000">
                                     <div class="wt-img-effect">
                                         <img src="images/blog/constraction.png" alt="Architectural Trends">
                                     </div>
@@ -1078,7 +1081,7 @@
                         <!-- ADDRESS -->
                         <div class="col-lg-4 col-md-4 mb-4">
                             <div class="widget">
-                                <h4 class="widget-title">Our Office</h4>
+                                <h4 class="widget-title">Our Offices</h4>
                                 <div class="widget-section">
                                     <ul class="list-unstyled">
                                         <li class="my-2"><a href="https://maps.app.goo.gl/ZB1t9PKxnTLNHiFaA">SVN colony,Guntur, Andhra Pradesh, India</a></li>
@@ -1149,7 +1152,7 @@
 
 <script>
     AOS.init();
-  </script>
+</script>
 
 </body>
 

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/magnific-popup.min.css">
     <link rel="stylesheet" href="css/loader.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/flaticon.min.css">
     <link rel="stylesheet" href="css/skin/skin-3.css" class="skin">
      
@@ -89,8 +90,15 @@
                             </div>
                         </div>
                         <div class="wt-header-right ">
-                            <div class="site-bg-primary wt-header-right-child">
+                            <div class="wt-header-right-child">
+                                <!-- ETRA Nav -->
                                 <div class="extra-nav">
+                                    <div class="extra-cell" id="download">
+                                        <a href="/" class="site-search-btn text-uppercase" onclick="downloadPdfCatlog()">Download <i class="fa fa-download"></i></a>
+                                    </div>
+                                 </div>                                 
+                                <!-- ETRA Nav -->
+                                <div class="site-bg-primary  extra-nav">
                                     <div class="extra-cell">
                                         <div class="right-arrow-btn">
                                             <button type="button" class="btn-open contact-slide-show text-white notification-animate"><i class="fa fa-angle-left"></i></button>
@@ -98,69 +106,62 @@
                                     </div>
                                  </div>
                              </div>                                 
-                       </div>  
+                        </div> 
                         <!-- Contact Nav -->                            
                         <div class="contact-slide-hide"> 
                             <div class="contact-nav">
                                  <a href="javascript:void(0)" class="contact_close">&times;</a>
-                                 <div class="contact-nav-form p-a30">
-                                    <form class="cons-contact-form" method="post" action="form-handler.php">
+                                 <div class="contact-nav-form p-a20">
+                                    <form id="quotation-form" class="cons-contact-form">
                                         <div class="m-b30">
-                                            <!-- TITLE START -->
                                             <div class="section-head text-left">
-                                                <h4 class="m-b5">Get A Quotation</h4>
-                                            </div>
-                                            <!-- TITLE END --> 
-                                            <div class="input input-animate">
-                                                <label for="name">Name</label>
-                                                <input type="text" name="name"  id="name" required>
+                                                <h4 class="m-b3">Get A Quotation</h4>
+                                            </div> 
+                                            <div class="form-group">
+                                                <input name="name" type="text" class="form-control" placeholder="Name" id="name" required>
                                                 <span class="spin"></span>
                                             </div>
-                                            <div class="input input-animate">
-                                                <label for="email">Email</label>
-                                                <input type="email" name="email"   id="email" required>
+                                            <div class="form-group">
+                                                <input name="email" type="email" class="form-control" placeholder="Email Address" id="email" required>
                                                 <span class="spin"></span>
-                                            </div> 
-                                            <div class="input input-animate input-animate">
-                                                <label for="phone">Phone Number</label>
-                                                <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input name="phone" type="tel" class="form-control" placeholder="Phone Number" id="phone" pattern="[0-9]{10}" required>
                                                 <span class="spin"></span>
-                                            </div> 
-                                            <div class="input mb-5">
-                                                <!-- <label for="phone">Select your space</label> -->
-                                                <select class="form-select form-select-sm mt-3" name="space" id="space"  aria-label=".form-select-sm example" style="border: none; border-bottom: 2px solid #d8dada; line-height: 60px; font-size: 14px; font-weight: 600; top: 10px;">
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-select form-select-sm mt-3" name="space" id="space"  aria-label=".form-select-sm example">
                                                     <option selected>Select your space</option>
-                                                    <option value="independent_house">independent house </option>
-                                                    <option value="villas">villas</option>
+                                                    <option value="independent_house">Independent House</option>
+                                                    <option value="villas">Villas</option>
                                                     <option value="2BHK">2BHK</option>
                                                     <option value="3BHK">3BHK</option>
-                                                    <option value="shops">shops</option>
+                                                    <option value="shops">Shops</option>
                                                     <option value="Office">Office</option>
-                                                  </select>
+                                                </select>
                                                 <span class="spin"></span>
-                                            </div> 
-                                                                                           
+                                            </div>
                                             <div class="text-right">
-                                                <button name="submit" type="button" onclick="get_quot()" value="Submit" class="btn-half site-button m-b15">
-                                                      <span>Submit</span>
+                                                <button id="form-submit" name="submit" type="submit" value="Submit" class="site-button site-btn-effect">
+                                                    Submit
                                                 </button>
                                             </div>
                                         </div>
-                                    </form>
-                                    <div class="contact-info text-black m-b30">
+                                    </form>                                   
+                                    <div class="contact-info text-black m-b20">
                                         <!-- TITLE START -->
                                         <div class="section-head text-left">
                                             <h4 class="m-b5">Contact Info</h4>
                                         </div>
                                         <!-- TITLE END --> 
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
+                                        <div class="wt-icon-box-wraper left p-b20 icon-shake-outer">
                                             <div class="icon-xs"><i class="flaticon-smartphone  icon-shake"></i></div>
                                             <div class="icon-content">
                                                 <h5 class="m-t0 font-weight-500">Phone number</h5>
                                                 <p><a href="tel:+91 8499842999">+91 8499842999</a></p>
                                             </div>
                                         </div>
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
+                                        <div class="wt-icon-box-wraper left p-b20 icon-shake-outer">
                                             <div class="icon-xs"><i class="flaticon-email  icon-shake"></i></div>
                                             <div class="icon-content">
                                                 <h5 class="m-t0 font-weight-500">Email address</h5>
@@ -172,7 +173,9 @@
                                             <div class="icon-content">
                                                 <h5 class="m-t0 font-weight-500">Address info</h5>
                                                 <ul class="list-unstyled">
+                                                    <li class="my-2 font-weight-500">Guntur Branch :</li> 
                                                     <li class="my-2"><a href="https://maps.app.goo.gl/ZB1t9PKxnTLNHiFaA">SVN colony,Guntur, Andhra Pradesh, India</a></li>
+                                                    <li class="my-2 font-weight-500">Hyderabad Branch :</li> 
                                                     <li class="my-2"><a href="https://maps.app.goo.gl/G1QVnFgZQbac3A7Q6">Kukatpally, Hyderabad, Telangana, India</a></li>
                                                 </ul>
                                             </div>
@@ -278,7 +281,7 @@
                                 <h2>Get In Touch</h2>
                             </div>                                            
                             <!-- TITLE END -->                        
-                            <form class="contact-form cons-contact-form" method="post" action="form-handler.php">
+                            <form class="contact-form cons-contact-form" id="contact-form">
                                 <div class="contact-one">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
@@ -300,7 +303,7 @@
                                             </div>
                                         </div>
                                         <div class="text-left col-md-12 mb-5">
-                                            <button name="submit" type="submit" value="Submit" class="site-button site-btn-effect">
+                                            <button id="submit-button" name="submit" type="submit" value="Submit" class="site-button site-btn-effect">
                                                     Submit
                                             </button>
                                         </div>
@@ -308,12 +311,25 @@
                                </div>     
                             </form>
                     </div>
-               </div>
+                </div>
                  <!-- LOCATION BLOCK-->
-                 <div class="container mt-5">
-                    <div class="gmap-outline m-b80">
-                        <div  class="google-map-gray google-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1671883239943!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                 <div class="container mt-2">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h4 class="text-center">Guntur Branch</h4>
+                            <div class="gmap-outline m-b40">
+                                <div  class="google-map-gray google-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7657.82907537458!2d80.4154322!3d16.32731045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a358a8693d2721b%3A0x652d42de50798e76!2sSVN%20Colony%2C%20Guntur%2C%20Andhra%20Pradesh%20522006!5e0!3m2!1sen!2sin!4v1724139947266!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h4 class="text-center">Hyderabad Branch</h4>
+                            <div class="gmap-outline m-b40">
+                                <div  class="google-map-gray google-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30443.068151393454!2d78.4047459!3d17.489196449999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91ec0162f43d%3A0x3288c6fe4358cf48!2sKukatpally%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1724139881207!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -380,7 +396,7 @@
                         <!-- ADDRESS -->
                         <div class="col-lg-4 col-md-4 mb-4">
                             <div class="widget">
-                                <h4 class="widget-title">Our Office</h4>
+                                <h4 class="widget-title">Our Offices</h4>
                                 <div class="widget-section">
                                     <ul class="list-unstyled">
                                         <li class="my-2"><a href="https://maps.app.goo.gl/ZB1t9PKxnTLNHiFaA">SVN colony,Guntur, Andhra Pradesh, India</a></li>

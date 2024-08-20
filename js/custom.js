@@ -757,16 +757,79 @@ Get A Quotation
 ===========================*/	
 
 
-function get_quot(){
-	const name = $('#name').val();
-	const email = $('#email').val();
-	const phone = $('#phone').val();
-	const space = $('#space').val();
+// Dynamically load the EmailJS SDK
+(function() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://cdn.emailjs.com/dist/email.min.js";
+    script.onload = function() {
+        emailjs.init("--service ID--");
+    };
+    document.head.appendChild(script);
+})();
 
-	let formData = new FormData();
-	formData.append('name', name);
-	formData.append('email', email);
-	formData.append('phone', phone);
-	formData.append('space', space);
+// quotation-form email.js
+document.getElementById('form-submit').addEventListener('click', function() {
+    const form = document.getElementById('quotation-form');
+    const formData = new FormData(form);
+    if (form.checkValidity()) {
+        const params = {};
+        formData.forEach((value, key) => {
+            params[key] = value;
+        });
+		const serviceID = "service_ID";
+		const templateID = "template_ID";
+		emailjs.send(serviceID, templateID, params)
+            .then(response => {
+                console.log('Email sent successfully:', response.status, response.text, params);
+        		alert(`Thank you, ${params.name}. Your request has been sent successfully!`);
+                form.reset();
+            })
+            .catch(error => {
+				console.log("FAILED...", error, params);
+				alert("Failed to send. Please try again later.");
+            });
+    } else {
+        form.reportValidity();
+    }
+});
+
+
+// Conatct form email.js 
+document.getElementById('submit-button').addEventListener('click', function() {
+    const form = document.getElementById('contact-form');
+    const formData = new FormData(form);
+    if (form.checkValidity()) {
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+		const serviceID = "service_ID";
+		const templateID = "template_ID";
+		emailjs.send(serviceID, templateID, data)
+            .then(response => {
+                console.log('Email sent successfully:', response.status, response.text, data);
+        		alert(`Thank you, ${data.name}. Your request has been sent successfully!`);
+                form.reset();
+            })
+            .catch(error => {
+				console.log("FAILED...", error, data);
+				alert("Failed to send. Please try again later.");
+            });
+    } else {
+        form.reportValidity();
+    }
+});
+
+
+/*DOWNLOAD E-CATALOGUE BROCHURES-CATALOGUE*/
+function downloadPdfCatlog() {
+    var pdfUrl = './stone-square-infra.pdf';
+    window.open(pdfUrl, '_blank');
+    var link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'stone-square-infra.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
-
