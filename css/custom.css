@@ -129,6 +129,7 @@ YOU CAN WRIGHT CUSTOME CSS
   height: 75px;
 }
 
+
 @media only screen and (max-width: 991px) {
   .list-inline-item:not(:last-child) {
     margin-right: 0px;
@@ -148,6 +149,16 @@ YOU CAN WRIGHT CUSTOME CSS
   .our-team-one .team-img {
     padding: 40px 40px 0px 0px;
   }
+  .counter-section-one{
+    background-image:url(../images/about/stroke.png);
+    height:700px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .icon-content p{
+    min-height: 100px;
+  }
 }
 
 @media only screen and (max-width: 554px) {
@@ -156,13 +167,6 @@ YOU CAN WRIGHT CUSTOME CSS
   }
   .header-style-1 .navbar-toggler {
     right: 5%;
-  }
-  .counter-section-one{
-    background-image:url(../images/about/stroke.png);
-    height:700px;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
   }
   .counter-section-one{
     background-image:url(../images/about/stroke.png);
