@@ -83,8 +83,41 @@ YOU CAN WRIGHT CUSTOME CSS
     margin-bottom: 2.5%;
 }
 
-
-
+/* quation nav contact form */
+.contact-slide-hide .form-control,
+.contact-slide-hide .form-select{
+	border: 0px;
+  background-color: transparent;
+}
+.contact-slide-hide .form-control::-webkit-input-placeholder,
+.contact-slide-hide .form-control::-moz-placeholder,
+.contact-slide-hide .form-control:-ms-input-placeholder,
+.contact-slide-hide .form-control:-moz-placeholder {
+  color: #000;
+  font-size:12px;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.contact-slide-hide .form-control{
+	border-bottom:2px solid #ddd;
+	padding-left:0px;
+	padding-right:0px;
+}
+.contact-slide-hide .form-group select{
+  border: none; 
+  border-bottom: 2px solid #ddd; 
+  line-height: 40px; 
+  font-size: 14px; 
+  font-weight: 600; 
+  top: 0px;
+}
+.contact-slide-hide .spin {  transition: 300ms cubic-bezier(.4, 0, .2, 1); -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1); -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);}
+.contact-slide-hide .spin { width: 0%; height: 2px; position: absolute; bottom: 0; left: 0;}
+.contact-slide-hide .form-control:focus + .spin
+.contact-slide-hide .form-select:focus + .spin{ 
+  background: #000; 
+  width:100%;
+} 
 
 @media screen and (max-width: 920px) {
   #download {

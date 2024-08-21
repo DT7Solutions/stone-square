@@ -716,33 +716,35 @@ function mobile_side_drawer(){
 	Document on  Submit FUNCTION START
 ===========================*/
 
-	// > Contact form function by = custom.js	
-	jQuery(document).on('submit', 'form.cons-contact-form', function(e){
-		e.preventDefault();
-		var form = jQuery(this);
-		/* sending message */
-		jQuery.ajax({
-			url: 'https://thewebmax.com/intoriza/phpmailer/mail.php',
-			data: form.serialize() + "&action=contactform",
-			type: 'POST',
-			dataType: 'JSON',
-			beforeSend: function() {
-				jQuery('.loading-area').show();
-			},
-
-			success:function(data){
-				jQuery('.loading-area').hide();
-				if(data['success']){
-				jQuery("<div class='alert alert-success'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');
-				jQuery('.alert-success').delay(2000).fadeOut(500);
-				}else{
-				jQuery("<div class='alert alert-danger'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');	
-				}
-			}
-		});
-		//jQuery('.cons-contact-form').trigger("reset");
-		return false;
-	});	
+jQuery(document).on('submit', 'form.cons-contact-form', function(e) {
+    e.preventDefault();
+    var form = jQuery(this);
+    if (form[0].checkValidity()) {
+        var formData = form.serialize();
+        jQuery('.loading-area').show();
+        jQuery.ajax({
+            url: '/',
+            data: formData + "&action=contactform",
+            type: 'POST',
+            dataType: 'json',
+            success: function(data) {
+                jQuery('.loading-area').hide();
+				// console.log('AJAX request success:');
+                if (data.success) {
+                    form.trigger("reset");
+                }
+            },
+            error: function(xhr, status, error) {
+                jQuery('.loading-area').hide();
+				// console.log('AJAX request failed:');
+				form.trigger("reset");
+            }
+        });
+    } else {
+        form[0].reportValidity();
+    } 
+    return false;
+});
 
 /*===========================
 	Document on  Submit FUNCTION END
@@ -783,7 +785,6 @@ document.getElementById('form-submit').addEventListener('click', function() {
             .then(response => {
                 console.log('Email sent successfully:', response.status, response.text, params);
         		alert(`Thank you, ${params.name}. Your request has been sent successfully!`);
-                form.reset();
             })
             .catch(error => {
 				console.log("FAILED...", error, params);
@@ -809,7 +810,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
 		emailjs.send(serviceID, templateID, data)
             .then(response => {
                 console.log('Email sent successfully:', response.status, response.text, data);
-        		alert(`Thank you, ${data.name}. Your request has been sent successfully!`);
+        		alert(`Thank you, ${data.username}. Your request has been sent successfully!`);
                 form.reset();
             })
             .catch(error => {
