@@ -14,7 +14,7 @@ YOU CAN WRIGHT CUSTOME CSS
   margin-bottom: 2.5%;
 }
 .company-name {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600 !important;
 }
 
@@ -118,9 +118,57 @@ YOU CAN WRIGHT CUSTOME CSS
   background: #000; 
   width:100%;
 } 
+.contact-info-section .wt-icon-box-wraper{
+	min-height: 300px;
+	border: 1px solid #efefef;
+	align-content: center;
+}
+.logo-header {
+  min-width: 150px;
+  max-width: 200px;
+  height: 75px;
+}
 
-@media screen and (max-width: 920px) {
-  #download {
-    display: none;
+@media only screen and (max-width: 991px) {
+  .list-inline-item:not(:last-child) {
+    margin-right: 0px;
+  }
+  .contact-slide-show.text-white i{
+    color: #fff !important;
+  }
+  .header-center .wt-header-right .extra-nav {
+    padding: 22px 15px;
+  }
+  .header-style-1 .navbar-toggler {
+    right: 2.5%;
+  }
+  .header-center .wt-header-left {
+    width: 200px;
+  }
+  .our-team-one .team-img {
+    padding: 40px 40px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 554px) {
+  .header-center .wt-header-right .extra-nav {
+    padding: 18px 10px;
+  }
+  .header-style-1 .navbar-toggler {
+    right: 5%;
+  }
+  .counter-section-one{
+    background-image:url(../images/about/stroke.png);
+    height:700px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .counter-section-one{
+    background-image:url(../images/about/stroke.png);
+    height:375px;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
