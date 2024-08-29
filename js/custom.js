@@ -827,10 +827,4 @@ document.getElementById('submit-button').addEventListener('click', function() {
 function downloadPdfCatlog() {
     var pdfUrl = './stone-square-infra.pdf';
     window.open(pdfUrl, '_blank');
-    var link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'stone-square-infra.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
 }
